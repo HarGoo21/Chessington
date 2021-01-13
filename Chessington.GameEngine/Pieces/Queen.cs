@@ -13,10 +13,11 @@ namespace Chessington.GameEngine.Pieces
             var currentSquare = board.FindPiece(this);
             var availableMoves = new List<Square>();
 
-            availableMoves.AddRange(LateralPiece.GetLateralMoves(currentSquare));
-            availableMoves.AddRange(DiagonalPiece.GetDiagonalMoves(currentSquare));
+            availableMoves.AddRange(LateralPiece.GetLateralMoves(currentSquare, board));
+            availableMoves.AddRange(DiagonalPiece.GetDiagonalMoves(currentSquare, board));
             
             return availableMoves;
+            
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Chessington.GameEngine.Pieces
 {
     public static class DiagonalPiece
     {
-        public static IEnumerable<Square> GetDiagonalMoves(Square square)
+        public static IEnumerable<Square> GetDiagonalMoves(Square square, Board board)
         {
             var availableMoves = new List<Square>();
             for (var i = 0; i < GameSettings.BoardSize; i++)
