@@ -32,6 +32,7 @@ namespace Chessington.GameEngine.Pieces
             {
                 availableMoves.Remove(move);
             }
+            
             return availableMoves;
         }
     }
