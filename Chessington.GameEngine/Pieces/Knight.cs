@@ -27,6 +27,11 @@ namespace Chessington.GameEngine.Pieces
                 }
             }
 
+            var invalidMoves = NotPawn.TakeOnlyOpponent(availableMoves, board);
+            foreach (var move in invalidMoves)
+            {
+                availableMoves.Remove(move);
+            }
             return availableMoves;
         }
     }
