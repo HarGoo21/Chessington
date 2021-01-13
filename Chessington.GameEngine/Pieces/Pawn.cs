@@ -13,29 +13,30 @@ namespace Chessington.GameEngine.Pieces
             var currentSquare = board.FindPiece(this);
             if (this.Player == Player.White)
             {
-                if (currentSquare.Row == 7)
+                if (currentSquare.Row == 7 && board.GetPiece(Square.At(5, currentSquare.Col)) == null && board.GetPiece(Square.At(6, currentSquare.Col)) == null)
                 {
                     return new List<Square> {Square.At(currentSquare.Row - 2, currentSquare.Col), Square.At(currentSquare.Row - 1, currentSquare.Col)};
                 }
-                else
+                else if (board.GetPiece(Square.At(currentSquare.Row - 1, currentSquare.Col)) == null)
                 {
                     return new List<Square> {Square.At(currentSquare.Row - 1, currentSquare.Col)};
                 }
             }
             else
             {
-                if (currentSquare.Row == 1)
+                if (currentSquare.Row == 1 && board.GetPiece(Square.At(3, currentSquare.Col)) == null && board.GetPiece(Square.At(2, currentSquare.Col)) == null)
                 {
                     return new List<Square> {Square.At(currentSquare.Row + 2, currentSquare.Col), Square.At(currentSquare.Row + 1, currentSquare.Col)};
                 }
-                else
+                else if (board.GetPiece(Square.At(currentSquare.Row + 1, currentSquare.Col)) == null)
                 {
                     return new List<Square> {Square.At(currentSquare.Row + 1, currentSquare.Col)};
                 }
                     
                 
             }
-            return new List<Square> {Square.At(6, 0), Square.At(2, 0)};
+
+            return new List<Square>();
         }
     }
 }
